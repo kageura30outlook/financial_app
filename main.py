@@ -21,7 +21,7 @@ def save_to_file():
 def load_from_file():
     file_path = 'financial_data.json'
     if os.path.exists(file_path):
-        with open(file_path, 'r') as f;
+        with open(file_path, 'r') as f:
             st.session_state =  json.load(f)
         st.success(f"Data loaded from{file_path}")
     else:
@@ -40,7 +40,7 @@ if st.button('Add Item'):
 
 if st.button('Load Data'):
     load_from_file()
-        
+
 if st.button('Save Data'):
     save_to_file()
 
