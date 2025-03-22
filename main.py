@@ -10,6 +10,9 @@ if 'money' not in st.session_state:
 if 'data' not in st.session_state:
     st.session_state.data = []  # Initialize an empty list for financial data
 
+# Debugging: Print session state to ensure it's correctly initialized
+st.write(st.session_state)
+
 # Title of the app
 st.title('Financial Tracker')
 
