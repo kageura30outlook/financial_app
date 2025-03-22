@@ -50,6 +50,6 @@ if st.button('Load Data'):
 if st.button('Save Data'):
     save_to_file()
 
-if st.session_state.data:
-    df = pd.DataFrame(st.session_state.data)
+if st.session_state:
+    df = pd.DataFrame(st.session_state)
     st.table(df)
