@@ -25,7 +25,7 @@ def load_from_file():
     file_path = 'financial_data.json'
     if os.path.exists(file_path):
         with open(file_path, 'r') as f:
-            st.session_state =  json.load(f)
+            st.session_state.data =  json.load(f)
         st.success(f"Data loaded from{file_path}")
     else:
         st.warning("No saved data found!")
