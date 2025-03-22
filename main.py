@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd
+money = 0
 # Title of the app
 st.title('Financial Tracker')
 
@@ -10,10 +11,10 @@ if 'data' not in st.session_state:
 
 if st.button('Add Item'):
     if description and cost:
-        st.session_state.data.append({'Description': description, 'Cost': cost})
+        st.session_state.data.append({'Description': description, 'Cost': cost, 'Total Money':money})
         st.success('Item added succsesfully')
     else:
         st.error('Please enter all the terms!')
 if st.session_state.data:
     df = pd.DataFrame(st.session_state.data)
-    st.table(df) 
+    st.table(df)
