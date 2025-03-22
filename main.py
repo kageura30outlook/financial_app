@@ -22,14 +22,14 @@ if 'data' not in st.session_state:
 def save_to_file():
     file_path = 'financial_data.json'
     with open(file_path, 'w') as f:
-        json.dump(st.session_state, f)
+        json.dump(st.session_state.data, f)
     st.success(f"Data saved to {file_path}")
 
 def load_from_file():
     file_path = 'financial_data.json'
     if os.path.exists(file_path):
         with open(file_path, 'r') as f:
-            st.session_state = json.load(f)
+            st.session_state.data = json.load(f)
         st.success(f"Data loaded from {file_path}")
     else:
         st.warning("No saved data found!")
@@ -51,5 +51,5 @@ if st.button('Save Data'):
     save_to_file()
 
 if st.session_state:
-    df = pd.DataFrame(st.session_state)
+    df = pd.DataFrame(st.session_state.data)
     st.table(df)
