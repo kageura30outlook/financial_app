@@ -37,7 +37,7 @@ def load_from_file():
 
 if st.button('Add Item'):
     if description and (cost or earn):
-        st.session_state.append({'Description': description, 'Cost': cost, 'Total Money':st.session_state.money})
+        st.session_state.append({'Description': description, 'Cost': cost,}) #'Total Money':st.session_state.money})
         st.success('Item added succsesfully')
         save_to_file()
 
