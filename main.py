@@ -5,12 +5,15 @@ money = 0
 st.title('Financial Tracker')
 
 description = st.text_input('Enter a description for the item:')
-cost = st.number_input('Enter the cost of the item', min_value=0.0, format="%.2f")
+cost = st.number_input('Enter the cost of the item' )
+earn = st.number_input('Enter how much money you earned:')
+money -= cost
+money -= earn
 if 'data' not in st.session_state:
     st.session_state.data = []
 
 if st.button('Add Item'):
-    if description and cost:
+    if description and cost or earn:
         st.session_state.data.append({'Description': description, 'Cost': cost, 'Total Money':money})
         st.success('Item added succsesfully')
     else:
