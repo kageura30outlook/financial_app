@@ -7,6 +7,9 @@ import os
 if 'money' not in st.session_state:
     st.session_state.money = 0
 
+if 'data' not in st.session_state:  
+    st.session_state.data = []
+
 st.title('Financial Tracker')
 
 description = st.text_input('Enter a description for the item:')
@@ -15,8 +18,7 @@ earn = st.number_input('Enter how much money you earned:')
 st.session_state.money -= cost
 st.session_state.money += earn
 
-if 'data' not in st.session_state:  
-    st.session_state.data = []
+
 
 
 def save_to_file():
