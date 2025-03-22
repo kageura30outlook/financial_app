@@ -12,6 +12,9 @@ earn = st.number_input('Enter how much money you earned:')
 money -= cost
 money += earn
 
+if 'data' not in st.session_state:
+    st.session_state.data = []
+
 def save_to_file():
     file_path = 'financial_data.json'
     with open(file_path, 'w') as f:
@@ -26,8 +29,7 @@ def load_from_file():
         st.success(f"Data loaded from{file_path}")
     else:
         st.warning("No saved data found!")
-if 'data' not in st.session_state:
-    st.session_state.data = []
+
 
 if st.button('Add Item'):
     if description and cost or earn:
