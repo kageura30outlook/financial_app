@@ -12,8 +12,8 @@ st.title('Financial Tracker')
 description = st.text_input('Enter a description for the item:')
 cost = st.number_input('Enter the cost of the item' )
 earn = st.number_input('Enter how much money you earned:')
-st.session_state.money -= cost
-st.session_state.money += earn
+#st.session_state.money -= cost
+#st.session_state.money += earn
 
 #if 'data' not in st.session_state:  
     #st.session_state.data = []
