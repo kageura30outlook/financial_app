@@ -2,18 +2,18 @@ import streamlit as st
 import pandas as pd
 import json
 import os
-money = 0
-# Title of the app
+
+
 if 'money' not in st.session_state:
     st.session_state.money = 0
-    
+
 st.title('Financial Tracker')
 
 description = st.text_input('Enter a description for the item:')
 cost = st.number_input('Enter the cost of the item' )
 earn = st.number_input('Enter how much money you earned:')
-money -= cost
-money += earn
+st.session_state.money -= cost
+st.session_state.money += earn
 
 if 'data' not in st.session_state:
     st.session_state.data = []
@@ -23,14 +23,14 @@ def save_to_file():
     file_path = 'financial_data.json'
     with open(file_path, 'w') as f:
         json.dump(st.session_state.data, f)
-    st.success(f"Data saved to{file_path}")
+    st.success(f"Data saved to {file_path}")
 
 def load_from_file():
     file_path = 'financial_data.json'
     if os.path.exists(file_path):
         with open(file_path, 'r') as f:
-            st.session_state.data =  json.load(f)
-        st.success(f"Data loaded from{file_path}")
+            st.session_state.data = json.load(f)
+        st.success(f"Data loaded from {file_path}")
     else:
         st.warning("No saved data found!")
 
