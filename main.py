@@ -10,8 +10,8 @@ if 'money' not in st.session_state:
 if 'data' not in st.session_state:
     st.session_state.data = []  # Initialize an empty list for financial data
 
-# Debugging: Print session state to ensure it's correctly initialized
-st.write(st.session_state)
+
+st.session_state = 0
 
 # Title of the app
 st.title('Financial Tracker')
@@ -50,7 +50,7 @@ if st.button('Add Item'):
         save_to_file()  # Save data to file after adding the item
 
     else:
-        st.error('Please enter all the terms!')
+        st.error('Please enter all the required terms!')
 
 # Button to load data from file
 if st.button('Load Data'):
