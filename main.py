@@ -28,6 +28,7 @@ st.session_state.money += earn
 # Function to save data to a file
 def save_to_file():
     file_path = 'financial_data.json'
+    # The code below "w" mode overwites so change to "a" mode
     with open(file_path, 'w') as f:
         json.dump(st.session_state.data, f)
     st.success(f"Data saved to {file_path}")
@@ -45,7 +46,7 @@ def load_from_file():
 # Add item to the financial tracker
 if st.button('Add Item'):
     if description and (cost or earn):  # Ensure that either cost or earn is entered
-        st.session_state.data.append({'Description': description, 'Cost': cost, 'Total Money': st.session_state.money})
+        st.session_state.data.append({'Description': description, 'Cost': cost,'Earn': earn, 'Total Money': st.session_state.money})
         st.success('Item added successfully')
         save_to_file()  # Save data to file after adding the item
 
