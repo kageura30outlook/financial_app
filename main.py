@@ -39,6 +39,8 @@ def load_from_file():
     else:
         st.warning("No saved data found!")
 
+
+
 if 'data' not in st.session_state:
     st.session_state['data'] = []
 
@@ -60,6 +62,13 @@ if st.button('Load Data'):
 # Button to save data to file
 if st.button('Save Data'):
     save_to_file()
+
+if st.button('Reset Data'):
+    # Reset 'money' to initial value
+    st.session_state['money'] = 0
+    
+    # Reset 'data' to an empty list
+    st.session_state['data'] = []
 
 st.write(dict(st.session_state['data']))
 # Display the financial data in a table if it's available
