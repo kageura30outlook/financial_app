@@ -20,7 +20,8 @@ earn = int(st.number_input('Enter how much money you earned:'))
 # Update the total money based on cost and earn
 st.session_state['money'] -= cost
 st.session_state['money'] += earn
-
+st.write(cost)
+st.write(earn)
 # Function to save data to a file
 def save_to_file():
     file_path = 'financial_data.json'
@@ -42,7 +43,7 @@ def load_from_file():
 if 'data' not in st.session_state:
     st.session_state['data'] = []
 
-
+st.write(cost)
 # Add item to the financial tracker
 if st.button('Add Item'):
     if description and (cost or earn):  # Ensure that either cost or earn is entered
@@ -52,7 +53,8 @@ if st.button('Add Item'):
 
     else:
         st.error('Please enter all the required terms!')
-
+st.write(cost)
+st.write(earn)
 # Button to load data from file
 if st.button('Load Data'):
     load_from_file()
