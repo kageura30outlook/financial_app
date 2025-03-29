@@ -4,7 +4,7 @@ import json
 import os
 
 cost = 0
-earn = 
+earn = 0
 # Initialize 'money' and 'data' in session state if they don't exist
 if 'money' not in st.session_state:
     
