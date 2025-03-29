@@ -6,7 +6,7 @@ import os
 
 # Initialize 'money' and 'data' in session state if they don't exist
 if 'money' not in st.session_state:
-    st.session_state.money = 0  # Set initial money to 0
+    st.session_state['money'] = 0  # Set initial money to 0
 
 # Title of the app
 st.title('Financial Tracker')
@@ -17,8 +17,8 @@ cost = st.number_input('Enter the cost of the item')
 earn = st.number_input('Enter how much money you earned:')
 
 # Update the total money based on cost and earn
-st.session_state.money -= cost
-st.session_state.money += earn
+st.session_state['money'] -= cost
+st.session_state['money'] += earn
 
 # Function to save data to a file
 def save_to_file():
