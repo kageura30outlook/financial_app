@@ -2,7 +2,8 @@ import streamlit as st
 import pandas as pd
 import json
 import os
-
+start = "start"
+st.session_state = {'shokika': start}
 
 # Initialize 'money' and 'data' in session state if they don't exist
 st.write(type(st.session_state))
@@ -10,7 +11,6 @@ st.write(st.session_state.key)
 if 'money' not in st.session_state:
     st.session_state.money = 0  # Set initial money to 0
 
-st.session_state = {'Total Money': st.session_state.money}
 # Title of the app
 st.title('Financial Tracker')
 
