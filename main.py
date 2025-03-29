@@ -8,6 +8,7 @@ import os
 if 'money' not in st.session_state:
     st.session_state['money'] = 0  # Set initial money to 0
 
+
 # Title of the app
 st.title('Financial Tracker')
 
@@ -25,7 +26,7 @@ def save_to_file():
     file_path = 'financial_data.json'
     # The code below "w" mode overwites so change to "a" mode
     with open(file_path, 'w') as f:
-        json.dump(st.session_state, f)
+        json.dump(st.session_state['data'], f)
     st.success(f"Data saved to {file_path}")
 
 # Function to load data from a file
@@ -33,15 +34,19 @@ def load_from_file():
     file_path = 'financial_data.json'
     if os.path.exists(file_path):
         with open(file_path, 'r') as f:
-            st.session_state = json.load(f)
+            st.session_state['data'] = json.load(f)
         st.success(f"Data loaded from {file_path}")
     else:
         st.warning("No saved data found!")
 
+if 'data' not in st.session_state:
+    st.session_state['data'] = {'Description': description, 'Cost': cost,'Earn': earn}
+
+
 # Add item to the financial tracker
 if st.button('Add Item'):
     if description and (cost or earn):  # Ensure that either cost or earn is entered
-        st.session_state.append({'Description': description, 'Cost': cost,'Earn': earn, 'Total Money': st.session_state.money})
+        st.session_state['data'].append({'Description': description, 'Cost': cost,'Earn': earn, 'Total Money': st.session_state['money']})
         st.success('Item added successfully')
         save_to_file()  # Save data to file after adding the item
 
@@ -57,6 +62,6 @@ if st.button('Save Data'):
     save_to_file()
 
 # Display the financial data in a table if it's available
-if st.session_state:
-    df = pd.DataFrame(st.session_state)
+if st.session_state['data']:
+    df = pd.DataFrame(st.session_state['data'])
     st.table(df)
