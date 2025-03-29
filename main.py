@@ -44,7 +44,6 @@ def load_from_file():
 if 'data' not in st.session_state:
     st.session_state['data'] = []
 
-st.write(cost)
 # Add item to the financial tracker
 if st.button('Add Item'):
     if description and (cost or earn):  # Ensure that either cost or earn is entered
