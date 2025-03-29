@@ -62,5 +62,5 @@ if st.button('Save Data'):
 st.write(dict(st.session_state['data']))
 # Display the financial data in a table if it's available
 if st.session_state['data']:
-    df = pd.DataFrame(dict(st.session_state['data']),index = 0)
+    df = pd.DataFrame(dict(st.session_state['data']).items(),index = 0).T
     st.table(df)
