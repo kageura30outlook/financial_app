@@ -3,7 +3,7 @@ import pandas as pd
 import json
 import os
 money = 0
-st.session_state = {'Total Money': money}
+st.session_state = {money : 'Total Money' }
 
 # Initialize 'money' and 'data' in session state if they don't exist
 st.write(type(st.session_state))
