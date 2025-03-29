@@ -2,7 +2,6 @@ import streamlit as st
 import pandas as pd
 import json
 import os
-money = 0
 
 
 # Initialize 'money' and 'data' in session state if they don't exist
