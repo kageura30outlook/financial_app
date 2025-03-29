@@ -8,10 +8,8 @@ import os
 if 'money' not in st.session_state:
     st.session_state['money'] = 0  # Set initial money to 0
 
-
 # Title of the app
 st.title('Financial Tracker')
-
 # Input fields
 description = st.text_input('Enter a description/name for the item:')
 cost = st.number_input('Enter the cost of the item')
@@ -40,13 +38,13 @@ def load_from_file():
         st.warning("No saved data found!")
 
 if 'data' not in st.session_state:
-    st.session_state['data'] = {'Description': description, 'Cost': cost,'Earn': earn}
+    st.session_state['data'] = []
 
 
 # Add item to the financial tracker
 if st.button('Add Item'):
     if description and (cost or earn):  # Ensure that either cost or earn is entered
-        st.session_state['data'].append({'Description': description, 'Cost': cost,'Earn': earn, 'Total Money': st.session_state['money']})
+        st.session_state['data'].update({'Description': description, 'Cost': cost,'Earn': earn, 'Total Money': st.session_state['money']})
         st.success('Item added successfully')
         save_to_file()  # Save data to file after adding the item
 
