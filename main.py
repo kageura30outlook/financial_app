@@ -2,8 +2,8 @@ import streamlit as st
 import pandas as pd
 import json
 import os
-start = "start"
-st.session_state = {'shokika': start}
+money = 0
+st.session_state = {'Total Money': money}
 
 # Initialize 'money' and 'data' in session state if they don't exist
 st.write(type(st.session_state))
