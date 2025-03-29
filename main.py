@@ -3,11 +3,9 @@ import pandas as pd
 import json
 import os
 money = 0
-st.session_state = {money : 'Total Money' }
+
 
 # Initialize 'money' and 'data' in session state if they don't exist
-st.write(type(st.session_state))
-st.write(st.session_state.keys)
 if 'money' not in st.session_state:
     st.session_state.money = 0  # Set initial money to 0
 
