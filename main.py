@@ -43,8 +43,7 @@ def load_from_file():
 
 
 if 'data' not in st.session_state:
-    st.session_state['data'] = ()
-
+    st.session_state['data'] = []
 st.write(st.session_state['money'])
 
 # Add item to the financial tracke
