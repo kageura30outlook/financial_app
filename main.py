@@ -68,9 +68,12 @@ if st.button('Save Data'):
 
 # Button to reset data
 if st.button('Reset Data'):
-    st.session_state['money'] = 0  # Reset 'money' to initial value
-    st.session_state['data'] = []  # Reset 'data' to an empty list
-    st.success('Data reset successfully!')
+    st.warning('Are you sure you want to perform this action.')
+    confirm = st.checkbox('Yes I am sure')
+    if confirm:
+        st.session_state['money'] = 0  # Reset 'money' to initial valuu
+        st.session_state['data'] = []  # Reset 'data' to an empty list
+        st.success('Data reset successfully!')
 
 # Display the current money
 st.write(f"Total Money: ￥{st.session_state['money']}")
