@@ -3,7 +3,7 @@ import pandas as pd
 import json
 import os
 
-st.session_state = st.session_state({'Total Money':st.session_state['money']})
+st.session_state['money'] = 0
 print(st.session_state.keys())
 cost = 0
 earn = 0
