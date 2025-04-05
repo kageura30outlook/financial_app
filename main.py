@@ -3,6 +3,7 @@ import pandas as pd
 import json
 import os
 
+print(st.session_state.keys())
 cost = 0
 earn = 0
 # Initialize 'money' and 'data' in session state if they don't exist
