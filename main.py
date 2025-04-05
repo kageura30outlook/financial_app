@@ -68,7 +68,7 @@ if st.button('Save Data'):
 
 # Button to reset data
 if st.button('Reset Data'):
-    st.warning('Are you sure you want to perform this action.')
+    st.warning('Are you sure you want to perform this action?')
     confirm = st.checkbox('Yes I am sure')
     if confirm:
         st.session_state['money'] = 0  # Reset 'money' to initial valuu
