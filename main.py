@@ -3,12 +3,13 @@ import pandas as pd
 import json
 import os
 
+st.session_state['money'] = 0
 cost = 0
 earn = 0
 # Initialize 'money' and 'data' in session state if they don't exist
 if 'money' not in st.session_state:
     
-    st.session_state = int(st.session_state['money'])  # Set initial money to 0    
+ 
     st.session_state['money'] = 0  # Set initial money to 0
 
 # Title of the app
