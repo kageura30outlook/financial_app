@@ -13,12 +13,19 @@ if 'data' not in st.session_state:
 # Title of the app
 st.title('Financial Tracker')
 
+# Function to save data to a file
+def save_to_file():
+    file_path = 'financial_data.json'
+    with open(file_path, 'w') as f:
+        json.dump(st.session_state['data'], f)
+    st.success(f"Data saved to {file_path}")
 # Input fields
 description = st.text_input('Enter a description/name for the item:')
 cost = int(st.number_input('Enter the cost of the item'))
 earn = int(st.number_input('Enter how much money you earned:'))
 # Save the initial value of 'money' before the update
 current_money = st.session_state['money']
+
 
 # Add item to the financial tracker
 if st.button('Add Item'):
@@ -40,13 +47,6 @@ if st.button('Add Item'):
         save_to_file()  # Save data to file after adding the item
     else:
         st.error('Please enter all the required terms!')
-
-# Function to save data to a file
-def save_to_file():
-    file_path = 'financial_data.json'
-    with open(file_path, 'w') as f:
-        json.dump(st.session_state['data'], f)
-    st.success(f"Data saved to {file_path}")
 
 # Function to load data from a file
 def load_from_file():
