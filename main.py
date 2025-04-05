@@ -3,7 +3,7 @@ import pandas as pd
 import json
 import os
 
-st.session_state['money'] = 0
+#st.session_state['money'] = 0
 cost = 0
 earn = 0
 # Initialize 'money' and 'data' in session state if they don't exist
