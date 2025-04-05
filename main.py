@@ -79,6 +79,8 @@ if st.button('Reset Data'):
 
 # Display the financial data in a table if it's available
 if st.session_state['data']:
-    s = pd.Series(dict(st.session_state['data']))
-    df = s.to_frame().T
+    #s = pd.Series(dict(st.session_state['data']))
+    #df = s.to_frame().T
+    df = pd.DataFrame(st.session_state['data'])
+
     st.write(df)
