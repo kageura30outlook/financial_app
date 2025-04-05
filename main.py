@@ -73,7 +73,7 @@ if st.button('Reset Data'):
     st.success('Data reset successfully!')
 
 # Display the current money
-st.write(f"Total Money: ${st.session_state['money']}")
+st.write(f"Total Money: ￥{st.session_state['money']}")
 
 # Display the financial data in a table if it's available
 if st.session_state['data']:
