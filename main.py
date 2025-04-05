@@ -47,13 +47,20 @@ if 'data' not in st.session_state:
 
 st.write(st.session_state['money'])
 
+# Add item to the financial tracke
 # Add item to the financial tracker
 if st.button('Add Item'):
     if description and (cost or earn):  # Ensure that either cost or earn is entered
-        st.session_state['data'].append({'Description': description, 'Cost': cost,'Earn': earn, 'Total Money': st.session_state['money']})
+        new_item = {
+            'Description': description,
+            'Cost': cost,
+            'Earn': earn,
+            'Total Money': st.session_state['money']
+        }
+        # Append the new item to the data list
+        st.session_state['data'].append(new_item)
         st.success('Item added successfully')
         save_to_file()  # Save data to file after adding the item
-
     else:
         st.error('Please enter all the required terms!')
 # Button to load data from file
