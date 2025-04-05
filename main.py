@@ -4,7 +4,6 @@ import json
 import os
 
 st.session_state['money'] = 0
-print(st.session_state.keys())
 cost = 0
 earn = 0
 # Initialize 'money' and 'data' in session state if they don't exist
@@ -72,7 +71,6 @@ if st.button('Reset Data'):
     # Reset 'data' to an empty list
     st.session_state['data'] = []
 
-st.write(dict(st.session_state['data']))
 # Display the financial data in a table if it's available
 if st.session_state['data']:
     s = pd.Series(dict(st.session_state['data']))
