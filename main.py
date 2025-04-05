@@ -81,4 +81,4 @@ if st.button('Reset Data'):
 if st.session_state['data']:
     s = pd.Series(dict(st.session_state['data']))
     df = s.to_frame().T
-    st.table(df)
+    st.write(df)
