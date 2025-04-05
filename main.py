@@ -39,7 +39,7 @@ if st.button('Add Item'):
             'Description': description,
             'Cost': cost,
             'Earn': earn,
-            'Total Money': current_money  # Set the Total Money based on current session's money before the update
+            'Total Money': st.session_state['money']# Set the Total Money based on current session's money before the update
         }
         # Append the new item to the data list
         st.session_state['data'].append(new_item)
