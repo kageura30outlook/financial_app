@@ -21,8 +21,8 @@ def save_to_file():
     st.success(f"Data saved to {file_path}")
 # Input fields
 description = st.text_input('Enter a description/name for the item:')
-cost = int(st.number_input('Enter the cost of the item', format="%d"))
-earn = int(st.number_input('Enter how much money you earned:', format="%d"))
+cost = int(st.number_input('Enter the cost of the item', format="%d",step = 1))
+earn = int(st.number_input('Enter how much money you earned:', format="%d", step = 1))
 # Save the initial value of 'money' before the update
 current_money = st.session_state['money']
 
