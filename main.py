@@ -3,6 +3,7 @@ import pandas as pd
 import json
 import os
 
+st.session_state.append({'Total Money':st.session_state['money']})
 print(st.session_state.keys())
 cost = 0
 earn = 0
